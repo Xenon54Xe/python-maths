@@ -3,12 +3,12 @@ des caractères accentués dans les textes
 
 Un jour ou l'autre, le développeur sous Python sera confronté à un message d'erreur
 dû à un caractère accentué. Exemple :
-UnicodeEncodeError: 'ascii' codec can't encode characters Ḧ
+UnicodeEncodeError: 'ascii' codec can't encode characters …
 Pourquoi ? Parce que sous Python la gestion des textes (chaînes de caractères) n'est
 vraiment pas simple...
 Dans la plupart des langages de développement, on peut travailler avec un seul type
 de chaînes : "String". Mais Python (jusqu'à la version 2.7.x) nous oblige à jongler
-avec 2 types : unicode et str (à partir de la version 3.0 de Python, il nḙy a plus de
+avec 2 types : unicode et str (à partir de la version 3.0 de Python, il n’y a plus de
 str). Certaines fonctions retournent des textes de type unicode, d'autres des str.
 Certaines réclament des entrées en unicode, d'autres en str.
-Essayons déjà d'expliquer la différence entre les deux types
+Essayons déjà d'expliquer la différence entre les deux types. //END
