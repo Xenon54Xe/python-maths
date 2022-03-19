@@ -2,13 +2,6 @@
 import os.path as path
 
 
-def Is_Number(str):
-    for i in range(48, 58):
-        if ord(str) == i:
-            return True
-    return False
-
-
 def Crypting(sentence, sentenceKey, mode):
     list_key = []
     mode = int(mode)
