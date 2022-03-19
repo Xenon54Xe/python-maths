@@ -1,5 +1,8 @@
 
 def Hex_To_Dec(nb):
+    nb = str(nb)
+    nb = nb.replace(" ", "")
+
     hex_library = {
         "1": 1,
         "2": 2,

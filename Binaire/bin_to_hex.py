@@ -1,5 +1,8 @@
 
 def Bin_To_Hex(nb):
+    nb = str(nb)
+    nb = nb.replace(" ", "")
+
     hex_library = {
         10: "A",
         11: "B",
@@ -9,17 +12,26 @@ def Bin_To_Hex(nb):
         15: "F"
     }
 
-    nb = str(nb).split(" ")
-    result = ""
-    for boxes in nb:
-        box_list = list(boxes)
-        reversed_box_list = []
-        for i in range(len(box_list)):
-            reversed_box_list.append(box_list[len(box_list) - i - 1])
-        add = 0
-        for i in range(len(reversed_box_list)):
-            add += int(reversed_box_list[i]) * 2 ** i
-        if add > 9:
-            add = hex_library[add]
-        result += str(add)
-    return result
+    bin_list = []
+    for bin in nb:
+        bin_list.insert(0, bin)
+    bin_list_squared = []
+    bin_str = ""
+    for i in range(len(bin_list)):
+        if i / 4 == int(i / 4) and i != 0:
+            bin_list_squared.insert(0, bin_str)
+            bin_str = ""
+        bin_str = bin_list[i] + bin_str
+    if bin_str != "":
+        bin_list_squared.insert(0, bin_str)
+    hex_str = ""
+    for box in bin_list_squared:
+        hex = 0
+        for i in range(len(box)):
+            add = int(box[len(box) - i - 1]) * 2 ** i
+            hex += add
+        if hex > 9:
+            hex_str += hex_library[hex]
+        else:
+            hex_str += str(hex)
+    return hex_str

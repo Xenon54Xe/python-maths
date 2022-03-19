@@ -1,5 +1,9 @@
 
 def Dec_To_Bin(nb):
+    nb = str(nb)
+    nb = nb.replace(" ", "")
+    nb = int(nb)
+
     dividend = 1
     time = 0
     while dividend <= nb:
